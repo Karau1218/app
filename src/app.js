@@ -1,6 +1,6 @@
 import express from 'express';
-import defaultRouter from './routers/default.routes.js';
-import campusesRouter from './routers/default.routes.js';
+import defaultRouter from './routers/campus.routes.js';
+import router from './routers/campus.routes.js';
 
 //configure Express.js app
 const app = express();
@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //routers
-app.use("/", defaultRouter);
-app.use("/campuses", campusesRouter);
-app.use("/locations", campusesRouter);
+// app.use("/", defaultRouter);
+app.use("/campuses", router);
+app.use("/locations", router);
 
 export default app;
